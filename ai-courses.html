@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="I train professional software engineers that companies love to hire. My courses:"
+    />
+    <title>Tech WIth Ishaq</title>
+    <meta property="og:title" content="The TWI..." />
+    <meta property="og:type" content="Website" />
+    <meta property="og:url" content="https://" />
+    <meta property="og:image" content="https://" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import "./normalize.css";
+
+      :root {
+        --color-primary: #2584ff;
+        --color-secondary: #00d9ff;
+        --color-accent: #ff3400;
+        --color-headings: #1b0760;
+        --color-body: #918ca4;
+        --color-body-darker: #5c5577;
+        --color-border: #ccc;
+        --border-radius: 30px;
+        --light: #f8f9fa;
+      }
+
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      /* Typography */
+
+      ::selection {
+        background: var(--color-primary);
+        color: #fff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      body {
+        background-color: var(--light);
+        /* background: linear-gradient(90deg, rgba(2,4,28,1) 26%, rgba(27,12,17,1) 100%, rgba(0,212,255,1) 100%); */
+        font-family: Inter, Arial, Helvetica, sans-serif;
+        font-size: 2rem;
+        line-height: 1.5;
+        color: var(--color-body);
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--color-headings);
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+
+      h1 {
+        font-size: 6rem;
+      }
+
+      h2 {
+        font-size: 4rem;
+      }
+
+      h3 {
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+
+      p {
+        margin-top: 0;
+        /* color: var(--color-body); */
+      }
+
+      @media screen and (min-width: 1024px) {
+        body {
+          font-size: 1.8rem;
+        }
+
+        h1 {
+          font-size: 8rem;
+        }
+
+        h2 {
+          font-size: 4rem;
+        }
+
+        h3 {
+          font-size: 2.4rem;
+        }
+      }
+
+      /* Links */
+
+      .link-arrow {
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        text-transform: uppercase;
+        border: 0;
+        outline: 0;
+      }
+
+      .link-arrow::after {
+        content: "-->";
+        margin-left: 10px;
+        transition: margin .3s;
+      }
+
+      .link-arrow:hover::after {
+        margin-left: 15px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .link-arrow {
+          font-size: 1.5rem;
+        }
+      }
+
+      .btn {
+        text-align: center;
+        font-size: large;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        outline: 0;
+        margin: 1rem 0;
+        padding: 2rem 4vw;
+        border-radius: 50px;
+        border: 0;
+      }
+
+      .btn--primary {
+        background: var(--color-primary);
+        color: #fff;
+      }
+
+      .btn--secodary {
+        background: var(--color-secondary);
+        color: #fff;
+      }
+
+      .btn--accent {
+        background: var(--color-accent);
+        color: #fff;
+      }
+
+      .btn--stretched {
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
+
+      .btn--outline {
+        background: #fff;
+        color: var(--color-headings);
+        border: 1px solid var(--color-headings);
+      }
+
+      .btn--block {
+        width: 100%;
+        display: inline-block;
+      }
+
+      .btn .icon {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+        vertical-align: middle;
+      }
+
+      /* Button */
+
+      .btn {
+        background: rgb(131,58,180);
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+        border-radius: var(--border-radius);
+        padding: 1.5rem 2rem;
+      
+      }
+
+      .btn a {
+        color: #fff;
+      }
+
+      /* Grid */
+
+      .grid {
+        display: grid;
+      }
+
+      @media screen and (min-width: 768px) {
+        .grid--1X2 {
+          grid-template-columns: 50% 50%;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .grid--1X3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* Blocks */
+
+      .block {
+        padding: 6rem 2rem;
+      }
+
+      .container {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+
+      .block__header {
+        text-align: center;
+        padding: 4rem;
+      }
+
+      .block__heading {
+        margin-top: 0;
+        margin-bottom: 3rem;
+      }
+
+      .block--dark h1,
+      .block--dark h2,
+      .block--dark h3 {
+        color: #fff;
+      }
+
+      .block--dark {
+        color: #cbd7db;
+      }
+
+      .block__image {
+        max-width: 500px;
+        border-radius: 7px;
+      }
+
+      /* Badge */
+
+      .badge {
+        border: 0;
+        border-radius: 20px;
+        font-size: 2rem;
+        width: 12rem;
+        height: 12rem;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .badge-group {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .badge__bold {
+        margin: 0;
+        font-size: 3rem;
+        font-weight: 700;
+      }
+
+      .badge--primary {
+        background: var(--color-primary);
+        color: #fff;
+      }
+
+      .badge--secondary {
+        background: var(--color-secondary);
+        color: #fff;
+      }
+
+      .badge--accent {
+        background: var(--color-accent);
+        color: #fff;
+      }
+
+      .badge--small {
+        font-size: 1.7rem;
+      }
+
+      @media screen and (min-width: 1024px) {
+        .badge {
+          font-size: 1.5rem;
+        }
+
+        .badge--small {
+          font-size: 1rem;
+        }
+
+        .badge-group {
+          gap: 4rem;
+        }
+      }
+
+
+
+      /* Icon */
+
+      .fa-icon {
+        display: inline-flex;
+        gap: 2rem;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .icon-container {
+        background: #f3f9fa;
+        width: 64px;
+        height: 64px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+      }
+
+      .icon-container--accent {
+        background: var(--color-accent);
+      }
+
+      .icon--primary {
+        fill: var(--color-primary);
+      }
+
+      .icon--secondary {
+        fill: var(--color-secondary);
+      }
+
+      .icon--accent {
+        fill: var(--color-accent);
+      }
+
+      .icon--white {
+        fill: #fff;
+      }
+
+      /* Feature */
+
+      .feature {
+        gap: 4rem 8rem;
+        margin: 12rem 0;
+      }
+
+      .feature__text {
+        text-transform: uppercase;
+      }
+
+      .text--primary {
+        color: var(--color-primary);
+      }
+
+      .text--secondary {
+        color: var(--color-secondary);
+      }
+
+      .text--accent {
+        color: var(--color-accent);
+      }
+
+      .feature__title {
+        display: block;
+      }
+
+      .feature:first-of-type {
+        margin: 6rem;
+      }
+
+      .features__heading {
+        margin: 1rem 0;
+      }
+
+      .feature-block .block__header {
+        text-align: left;
+      }
+
+      @media screen and (min-width: 768px) {
+        .feature:nth-of-type(even) .feature__content {
+          order: 2;
+        }
+      }
+
+      /* Block Domain */
+
+      .block-domain {
+        border-bottom: 1px solid #222;
+      }
+
+      .block-domain .block-domain__body {
+        margin: 4rem 0;
+      }
+
+      .block-domain .block__header {
+        text-align: left;
+      }
+
+      @media screen and (min-width: 768px) {
+        .block-domain .block__header {
+          text-align: center;
+        }
+      }
+
+
+      /* Hero */
+
+      .hero .block__header {
+        padding: 0;
+        text-align: left;
+        margin-bottom: 4rem;
+      }
+
+      .hero__image {
+        transform: translateY(5px);
+      }
+
+      .hero__heading {
+        margin: 0 2rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        .hero .block__header {
+          text-align: center;
+        }
+      }
+
+
+      /* Collapsibles */
+
+
+      .collapsible__content {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .3s;
+      }
+
+      .collapsible--expanded .collapsible__content {
+        max-height: 100%;
+        opacity: 1;
+      }
+
+      /* Card */
+
+      .card {
+        border-radius: 7px;
+        /* border: 1px solid #222; */
+        box-shadow: 0 1px 5px rgba(2,2,2,0.2);
+        overflow: hidden;
+      }
+
+      .card__header,
+      .card__image {
+        padding: 2rem 3rem;
+      }
+
+      .card--primary .card__header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+
+      .card--secondary .card__header {
+        background: var(--color-secondary);
+        color: #fff;
+      }
+
+      .card--accent .card__header {
+        background: #fff;
+        color: var(--color-primary);
+      }
+
+      .card--primary .badge--primary {
+        background: #126de4;
+      }
+
+      .card--secondary .badge--secondary {
+        background: #00cdf1;
+      }
+
+      .card--accent .badge--accent {
+        background: #f10000;
+      }
+
+      /* Plan */
+
+      .plan__name {
+        color: var(--color-headings);
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .plan {
+        transition: transform .2s ease-out;
+      }
+
+      .plan__price {
+        font-size: 2rem;
+      }
+
+      .plan__billing-cycle {
+        font-size: 2.4rem;
+        font-weight: 300;
+        opacity: 0.8;
+      }
+
+      .plan__description {
+        letter-spacing: 2px;
+      }
+
+      .plan .list__item {
+        margin-bottom: 2rem;
+      }
+
+      .plan--popular {
+        transform: scale(1.1);
+      }
+
+      .plan--popular .card__header {
+        position: relative;
+      }
+
+
+      .plan:hover {
+        transform: scale(1.05);
+      }
+
+      @media screen and (min-width: 1024px) {
+        .plan__name {
+          font-size: 1.4rem;
+        }
+
+        .plan__price {
+          font-size: 5rem;
+        }
+
+        .plan__billing-cycle {
+          font-size: 1.6rem;
+        }
+      }
+
+
+      /* Plans Block */
+
+      .block-plans .grid {
+        gap: 6rem 4rem;
+      }
+
+      .block-plans .card {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .block-plans .btn--outline {
+        background: #fff;
+      }
+
+      /* List */
+
+      .list {
+        list-style: none;
+        padding-left: 0; 
+        font-weight: bold;
+      }
+
+      .list-icon {
+        padding-left: 3rem;
+      }
+
+      .list--tick {
+        list-style-image: url(../images/tick.svg);
+        padding-left: 3rem;
+      }
+
+      .list--tick .list__item {
+        padding-left: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .list--line {
+        transform: translateY(-5px);
+      }
+
+
+      @media screen and (min-width: 768px) {
+        .list--tick .list__item {
+          padding-left: 0;
+        }
+      }
+
+      /* card-list */
+
+      .card-list {
+        border: 1px solid #1b0760;
+        border-radius: 7px;
+        max-width: 400px;
+        padding: 3rem;
+      }
+
+      .card-list__heading {
+        text-transform: uppercase;
+        font-size: 2rem;
+      }
+
+      /* Navigation Bar */
+
+      .nav {
+        background: #000;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+        align-items: center;
+      }
+
+      .nav__list {
+        width: 100%;
+        margin: 0;
+      }
+
+      .nav__item {
+        padding: 0.5rem 2rem;
+        border-bottom: 1px solid #222;
+      }
+
+      .nav__item>a {
+        color: #d2d0db;
+        transition: color .3s;
+      }
+
+      .nav__item>a:hover {
+        color: #fff;
+      }
+
+      .nav__togler:hover {
+        opacity: 0.5;
+        transition: box-shadow .3s;
+        cursor: pointer;
+      }
+
+      .nav__brand {
+        transform: translateY(5px);
+      }
+
+      .collapsible--expanded .nav__togler {
+        opacity: 1;
+        box-shadow: 0 0 0 3PX #ccc;
+        border-radius: 5px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .nav__togler {
+          display: none;
+        }
+
+        .nav__list {
+          width: auto;
+          display: flex;
+          max-height: 100%;
+          opacity: 1;
+          font-size: 1.6rem;
+        }
+
+        .nav__item {
+          border: 0;
+        }
+      }
+
+      /* Footter */
+
+      .footer {
+        border-top: 1px solid #222;
+        background: rgb(2,4,28);
+        background: linear-gradient(90deg, rgba(2,4,28,1) 26%, rgba(27,12,17,1) 100%, rgba(0,212,255,1) 100%);;
+      }
+
+      .footer .nav {
+        background: none;
+      }
+
+      .footer__list {
+        display: flex;
+        justify-content: space-around;
+      flex-wrap: nowrap;
+      }  
+
+      /* form */
+
+      .form {
+        background: var(--color-primary);
+      }
+
+      input, textarea {
+        color: #fff;
+      }
+
+      .input-group {
+        margin: 2rem 0;
+      }
+      .text-center {
+        text-align: center !important;
+        text-transform: uppercase;
+      }
+      .link {
+        margin: 40px;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/fdf814b92c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <h2 class="text-center">STUDY AI Learning Path</h2>
+        </div>
+      </div>
+    </div>
+    <div class="block container block-plans">
+      <div class="grid grid--1X2 grid--1X3">
+        <div class="plan">
+          <div class="card card--accent">
+            <div class="card__image">
+              <img src="img/htmlcss - Copy.webp" alt="the HTML & CSS image" />
+            </div>
+            <header class="card__header">
+              <h3 class="plan__name">Ultimate HTML & CSS</h3>
+              <span class="plan__description">
+                Master the fundamentals of web development with HTML5 &amp;
+                CSS3</span
+              >
+              <ul class="list list--tick">
+                <li class="list__item">Support by millions people</li>
+              </ul>
+              <span class="plan__billing-cycle">9 weeks</span>
+              <span class="badge badge--primary badge--small">100%</span>
+              <a
+                href="../company/then-html-css-part-2.html"
+                class="btn btn--outline btn--block"
+                >Get started</a
+              >
+            </header>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="card card--accent">
+            <div class="card__image">
+              <img
+                src="img/Git-logo.svg - Copy.png"
+                alt="the HTML & CSS image"
+              />
+            </div>
+            <header class="card__header">
+              <h3 class="plan__name">The Ultimate Git Course</h3>
+              <span class="plan__description">
+                Everything you need to know to use Git & GitHub to work
+                effectively as a team</span
+              >
+              <ul class="list list--tick">
+                <li class="list__item">Support by millions people</li>
+              </ul>
+              <span class="plan__billing-cycle">9 weeks</span>
+              <span class="badge badge--primary badge--small">100%</span>
+              <a
+                href="../company/then-html-css-part-2.html"
+                class="btn btn--outline btn--block"
+                >Get started</a
+              >
+            </header>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="card card--accent">
+            <div class="card__image">
+              <img src="img/javascript.webp" alt="the HTML & CSS image" />
+            </div>
+            <header class="card__header">
+              <h3 class="plan__name">The Ultimate JavaScript</h3>
+              <ul class="list list--tick">
+                <li class="list__item">Support by millions people</li>
+              </ul>
+              <span class="plan__billing-cycle">9 weeks</span>
+              <span class="badge badge--primary badge--small">100%</span>
+              <a
+                href="../company/then-html-css-part-2.html"
+                class="btn btn--outline btn--block"
+                >Get started</a
+              >
+            </header>
+          </div>
+        </div>
+
+        <div class="plan">
+          <div class="card card--accent">
+            <div class="card__image">
+              <img src="img/reactTs - Copy.png" alt="the HTML & CSS image" />
+            </div>
+            <header class="card__header">
+              <h3 class="plan__name">React 18 for Beginners</h3>
+              <span class="plan__description">
+                A step-by-step guide to building web apps with React 18+ and
+                TypeScript
+              </span>
+              <ul class="list list--tick">
+                <li class="list__item">Support by millions people</li>
+              </ul>
+              <span class="plan__billing-cycle">9 weeks</span>
+              <span class="badge badge--primary badge--small">100%</span>
+              <a
+                href="../company/then-html-css-part-2.html"
+                class="btn btn--outline btn--block"
+                >Get started</a
+              >
+            </header>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="card card--accent">
+            <div class="card__image">
+              <img src="img/python - Copy.jpg" alt="the HTML & CSS image" />
+            </div>
+            <header class="card__header">
+              <h3 class="plan__name">Complete Python Mastery</h3>
+              <span class="plan__description">
+                Everything you need to program in Python in one course (includes
+                3 real-world projects)
+              </span>
+              <ul class="list list--tick">
+                <li class="list__item">Support by millions people</li>
+              </ul>
+              <span class="plan__billing-cycle">9 weeks</span>
+              <span class="badge badge--primary badge--small">100%</span>
+              <a
+                href="../company/then-html-css-part-2.html"
+                class="btn btn--outline btn--block"
+                >Get started</a
+              >
+            </header>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="card card--accent">
+            <div class="card__image">
+              <img src="img/mysql - Copy.webp" alt="the HTML & CSS image" />
+            </div>
+            <header class="card__header">
+              <h3 class="plan__name">Complete SQL Mastery</h3>
+              <span class="plan__description"
+                >Everything you need to design and query databases in one
+                course</span
+              >
+              <ul class="list list--tick">
+                <li class="list__item">Support by millions people</li>
+              </ul>
+              <span class="plan__billing-cycle">9 weeks</span>
+              <span class="badge badge--primary badge--small">100%</span>
+              <a
+                href="../company/then-html-css-part-2.html"
+                class="btn btn--outline btn--block"
+                >Get started</a
+              >
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="link">
+      <a href="index.html">Back to Homepage</a>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
